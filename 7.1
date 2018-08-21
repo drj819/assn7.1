@@ -1,0 +1,30 @@
+Assignment 7.1 (1)
+
+library(reshape2)
+head(mtcars)
+tail(mtcars)
+library(ggplot2)
+ggplot(data=melt(mtcars), mapping=aes(x=value))+geom_histogram(bins=10)+facet_wrap(~variable, scales= 'free_x')
+
+
+(2)
+
+library(ggplot2)
+
+mtcars %>%
+keep(is.numeric) %>%
+gather() %>%
+ggplot(aes(value)) +
+facet_wrap(~ key,scales = "free") +
+stat_density()
+
+
+
+(3)
+
+library(ggplots2)
+library(reshape)
+m1<-mele(mtcars)
+ggplot(m1,aes(x=variable,y = value)) + facet_wrap(~variable) + geom_boxplot()
+
+
